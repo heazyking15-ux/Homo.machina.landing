@@ -1,0 +1,83 @@
+index.html      <-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homo Machina</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>HOMO MACHINA</h1>
+    <p>The Evolution Has Begun</p>
+    <div>
+      <a href="https://a.co/d/00iSSWSt" class="cta-btn cta-buy">Buy Now</a>
+      <a href="https://a.co/d/00iSSWSt" class="cta-btn cta-read">Read Now</a>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section class="section fade-up author-section">
+    <img src="https://i.ibb.co/6pVhBcV/qs5upv4niei5674rest4v686ir-SY600-SL200-PQ50-FMwebp.png" alt="P.A. Vasey">
+    <div>
+      <h2>Meet the Author</h2>
+      <p>P.A. Vasey is a master of high-concept speculative fiction, exploring the thin line between biological humanity and technological transcendence.</p>
+    </div>
+  </section>
+
+  <!-- BOOK OVERVIEW -->
+  <section class="section fade-up">
+    <h2>Book Overview</h2>
+    <p>The year is 2098. Humanity is extinct...</p>
+  </section>
+
+  <!-- RATINGS -->
+  <section class="section fade-up">
+    <h2>Reader Ratings</h2>
+    <p class="rating">⭐ 4.2 / 5 (600+ readers)</p>
+  </section>
+
+  <!-- BOOK IMAGE -->
+  <section class="section fade-up" style="text-align:center;">
+    <img src="https://i.ibb.co/jkxX9qKZ/719gq-RSscf-L-AC-UF1000-1000-QL80-FMwebp.png" alt="Homo Machina Book" style="max-width:300px;">
+  </section>
+
+  <footer class="footer">&copy; 2026 Homo Machina</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+style.css       <-- :root {
+  --accent: #f39200;
+  --bg: #fff;
+  --card-bg: #111;
+  --text: #111;
+}
+
+body { font-family: 'Exo 2', sans-serif; background: var(--bg); color: var(--text); margin:0; }
+
+.hero {
+  height: 90vh;
+  display:flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://i.ibb.co/jkxX9qKZ/719gq-RSscf-L-AC-UF1000-1000-QL80-FMwebp.png') center/cover no-repeat;
+  color:white;
+}
+
+.cta-btn { padding:12px 35px; margin:5px; text-transform: uppercase; font-weight: 700; border-radius: 5px; transition:0.3s; }
+.cta-buy { background: var(--accent); color:white; }
+.cta-read { background:white; color:var(--text); }
+.section { max-width:900px; margin:50px auto; padding:40px 20px; background: var(--card-bg); border-radius:15px; color:white; }
+.fade-up { opacity:0; transform: translateY(30px); transition: all 1s ease; }
+.fade-up.show { opacity:1; transform: translateY(0); }
+.footer { text-align:center; margin:50px 0; color:#777; }
+script.js       <-- // Fade-up scroll animation
+const elements = document.querySelectorAll('.fade-up');
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50) el.classList.add('show');
+  });
+});
